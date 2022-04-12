@@ -1,0 +1,54 @@
+Branch
+Um Branch é uma ramificação.
+É muito usado quando deseja-se dividir o desenvolvimento em duas ou mais frentes para que um código não represe outro.
+Também é comumente usado para dividir os ambientes DEV, HOM e PROD.
+
+Comandos referentes a Branches
+Lista de comandos relacionados com Branches.
+
+Git branch
+	Lista os Branches do repositório e indica em qual deles você está atualmente.
+
+Git branch <<novo branch>>
+	Cria um novo Branch com o nome informado.
+
+Git branch -d <<nome branch>>
+	Remove o Branch informado.
+
+Git checkout <<nome_branch>>
+	Alterna para o Branch informado.
+
+Git checkout -b <<nome_branch>>
+	Cria um novo branch e já alterna para ele.
+O mesmo que “git branch <<novo_branch>>” seguido de “git checkout <<nome_branch>>”.
+
+Merge
+Um Merge é uma mesclagem entre 2 Branches.
+É usando quando queremos importar alterações feitas em um Branch para outro.
+Basicamente mescla o conteúdo de um Branch “doador” (passado como parâmetro) para um “recebedor” (atualmente selecionado).
+Realizando Merge e resolvendo conflitos
+Para realizar um Merge, seguir a sintaxe abaixo.
+
+Git merge <<outro_branch>>
+	Realiza o merge do “outro_branch” no Branch que você está no momento.
+
+Quando um Merge é realizado, 3 possíveis casos podem ocorrer:
+
+Fast-Foreward
+	Significa que o Merge foi realizado com SUCESSO.
+	Esta mensagem aparece quando existe alterações em apenas um dos Branches.
+
+Recursive
+Significa que o Merge foi realizado com SUCESSO.
+	Esta mensagem aparece quando existe alterações nos dois Branches.
+
+Conflict
+Significa que o Merge foi teve conflito gerando ERRO.
+Conflitos ocorrem quando o mesmo arquivo foi alterado em diferentes Branchs e está tentando-se realizar um MERGE ou quando 2 pessoas diferentes alteram o mesmo arquivo no repositório local e depois tentam realizar o PUSH.
+
+Quando ocorre um conflito o GIT informa “Fix conflicts and then commit the result”.
+
+Quando as alterações conflitam, o GIT marca o arquivo que teve conflito, indicando onde está o HEAD e onde está o outro Branch. Assim você deve editar o arquivo, apagando as marcações que não quer e salvando o arquivo.
+
+Após resolver o conflito no repositório local, deverá novamente adicionar o arquivo e realizar o commit.
+
