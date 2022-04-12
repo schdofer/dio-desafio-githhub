@@ -1,0 +1,62 @@
+No Git, o commit corrente é chamado de HEAD, ou seja, HEAD corresponde ao commit para o qual o seu branch atual está apontando.
+Comandos relacionados com desfazer as coisas no GIT:	
+Desfazendo alterações locais que ainda não foram salvas
+
+Exibindo dados detalhados do último commit:
+	Git show HEAD
+		Usado para exibir o commit corrente (último realizado).
+		Exibe tudo que o “git log” e mais o que foi alterado no commit corrente.
+
+Obtendo arquivos salvos de commits anteriores:
+	Git checkout HEAD <<filename>>
+Usado para retornar para o “Working Directory” e “Staging Area” a última versão commitada do arquivo.
+Usado quando você fez alguma alteração que não deveria no arquivo e deseja retornar a última versão salva.
+
+	Git checkout <<SHA Commit>> <<filename>>
+Usado para retornar para o “Working Directory” e “Staging Area” a do arquivo correspondente ao commit informado.
+Usado quando você fez alguma alteração que não deveria no arquivo e deseja ver como estava em determinado commit.
+Git reset
+
+Removendo arquivos da Staging Area:
+	Git reset HEAD <<filename>>
+		Remove um arquivo da staging area, mantendo no Working Directory.
+		Usado quando um arquivo foi adicionado por engano na Staging Area.
+
+	Git reset HEAD
+	Git reset HEAD~2 (x Vezes)
+	Git reset HEAD^^^^ ( 4 commits abaixo)
+
+Removendo alguns commits do histórico de commits:
+	Git reset <<SHA DO COMMIT - 7 primeiros caracteres>>
+		Remove do histórico de commits tudo que estiver depois do SHA passado
+		Ex.: git reset 04d27f3
+
+Existem 3 formas de fazer um Reset (soft, mixed e hard), onde a forma padrão é a “mixed”.
+Quando não informada a forma de realizar o reset, é utilizada a forma padrão, que como dito acima é a mixed.
+
+Veja abaixo os exemplos e explicações.
+SOFT
+Git reset --soft 04bi00e
+Os arquivos dos commits posteriores ao commit para o qual o reset apontou o HEAD, seguem no “Working Directory” e na “Staging Area”.
+
+Muito usado para refazer algum commit quando deseja-se trocar a mensagem informada.
+
+MIXED
+	Git reset --mixed 04bi00e ou simplesmente git reset 04bi00e
+Os arquivos dos commits posteriores ao commit para o qual o reset apontou o HEAD, seguem no “Working Directory” mas são removidos da “Staging Area”.
+
+Muito usado para refazer algum commit quando deseja-se trocar a mensagem informada ou quando adicionou algum arquivo indevido ou ainda esqueceu-se de adicionar algum arquivo.
+
+HARD
+	Git hard --hard 04bi00e
+Os arquivos dos commits posteriores ao commit para o qual o reset apontou o HEAD, são REMOVIDOS DE TODAS AS ÁREAS, ou seja, removidos da “Área de Commit”, “Staging Area” e “Working Directory”.
+	
+É possível desfazer um RESET ?
+	Git reflog
+		Exibe o log de commits inclusive os removidos com RESET.
+Usado para obter hashs de commits que foram removidos com RESET de forma equivocada.
+	Git reset --hard 0ec0773
+O git reset, aceita referências de commits que não estão no “git log” mas estão no “git reflog”.
+
+Desta forma pode-se reapontar o HEAD, desfazendo um comando de RESET.
+
