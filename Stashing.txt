@@ -1,0 +1,29 @@
+Stash
+A tradução de Stash é esconderijo e é justamente isso que esta área é.
+É um local para guardarmos o código sem precisar realizar commit.
+Usado quando queremos alterar de Branch ou mudar de atividade mas ainda não queremos salvar ou persistir o que já fizemos.
+
+Comandos referentes a Stash
+Lista de comandos relacionados com Stash.
+
+Git stash list
+	Lista stashes realizados.
+
+Git stash save “Mensagem”
+Salva arquivos adicionados na “Staging Area”  na área de Stash incluindo um identificador dado pela “mensagem” informada a este stash realizado.
+Remove os arquivos da “Staging Area” e do “Working Directory” ao dar um comando “git Status”.
+
+Git stash apply stash@{0}
+	Retorna o Stash informado para “Staging Area” mas mantém cópia na área de Stash.
+	Onde o stash@{0} corresponde a um código stash de um identificador salvo.
+	Este código pode ser obtido com o comando “git stash list”.
+
+Git stash drop stash@{0}
+	Remove o stash informado da área de Stash.
+
+Git stash pop
+	Desempilha o último Stash da área de Stash para “Staging Area”.
+
+Git stash branch <<nome_branch>>
+	Cria um novo branch a partir do stash.
+
