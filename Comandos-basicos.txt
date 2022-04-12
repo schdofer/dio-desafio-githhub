@@ -1,0 +1,63 @@
+Para começar a utilizar precisamos aprender os comandos básicos.
+Abaixo seguem os principais comandos listados para que possa-se dar os primeiros passos com GIT.
+
+Git init
+Inicia um repositório GIT no diretório corrente.
+
+Removendo repositório Git
+Basta apagar o diretório “.git” que fora criado com o comando “git init”.
+
+Git status
+Verifica o status do repositório GIT corrente.
+Inspeciona todo conteúdo do diretório de trabalho e da staging area, informando se existe algum arquivo pendente de commit e arquivos não monitorados.
+
+Git add <<file_name>>
+Adiciona o arquivo informado na Staging Area.
+
+Git add <<filename_1>> <<filename_2>> <<filename_n>>
+	Adiciona múltiplos arquivos informados na Staging Area.
+
+Git add -a
+Adiciona todos os arquivos para Staging Area.
+
+Git add --all
+Adiciona todos os arquivos para Staging Area.
+
+Git add .
+Adiciona todos os arquivos para Staging Area.
+
+Git rm --cached <<file_name>>
+	Remove o arquivo da Staging Area, trazendo-o de volta para Working Directory.
+
+Git commit -m “message”
+	Grava no repositório local alterações presentes na staging area.
+	Regras e convenções:
+A mensagem deve ser informada entre aspas
+A mensagem deve ter no máximo 50 caracteres
+A mensagem deve ser escrita no tempo presente
+
+Git log
+	Exibe log de commits realizados.
+	Traz 4 informações importantes:
+Uma chave SHA que identifica unicamente o commit realizado.
+O autor do commit.
+A data do commit.
+A mensagem informada no commit.	
+
+Git log --oneline
+Exibe o log de commits realizados de forma resumida (apenas em uma linha).
+
+Git log --oneline --decorate
+Exibe o log de commits realizados de forma resumida (apenas em uma linha) e ainda mostra onde está posicionado o HEAD na árvore de commits.
+
+Git log --oneline --decorate --all
+Exibe o log de commits realizados de forma resumida (apenas em uma linha), mostra onde está posicionado o HEAD na árvore de commits e ainda exibe commits que estão a frente do HEAD na árvore de commits do repositório local.
+
+Para ver os logs remotos às vezes é preciso fazer um git fetch primeiro.
+
+Git log --oneline --decorate --all --graph
+Exatamente como o anterior, porém exibe uma visualização gráfica melhorada através de indentações.
+
+Git diff <<filename>>
+Verifica alterações realizadas no arquivo comparadas com a versão commitada.
+
