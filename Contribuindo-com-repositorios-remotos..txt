@@ -1,0 +1,54 @@
+Como já fora dito, o GIT trabalha de forma descentralizada. Logo, tudo que foi feito no repositório GIT local pode ser compartilhado com repositórios remotos.
+
+Primeiramente é necessário ter um repositório GIT remoto criado (como por exemplo no GITLAB, GITHUB ou BITBICKET).
+
+Criando um link entre repositório local e remoto
+
+Para criar um link entre um repositório local e remoto temos basicamente 2 formas:
+
+Quando já temos os dados salvos no repositório remoto e queremos iniciar nosso repositório local a partir dele.
+
+Para isso usamos o comando:
+	Git clone <<url_repositório_remoto>>
+
+Quando já temos os dados salvos no repositório local e queremos iniciar o repositório remoto a partir dos dados locais.
+
+	Para isso, usamos os comandos:
+		Git remote add origin <<url_repositório_remoto>>
+		Onde “origin” é o nome como o repositório remoto será referenciado localmente.
+		Pode ser qualquer nome, mas “origin” é uma convenção do GIT muito adotada.
+
+Visualizando repositórios remotos configurados no projeto GIT:
+
+Para isto, utilize os comandos:
+	Git remote
+		Lista os repositórios remotos ativos para o projeto.
+	Git remote -v ou git remote --verbose
+		Lista os repositórios remotos ativos para o projeto com maiores informações.
+Enviando dados do repositório local para o remoto
+
+Utilizar o comando “git push” do inglês empurrar.
+Basicamente 2 formas:
+	Git push
+Envia os dados commitados no repositório local corrente para o correspondente no repositório remoto.
+
+Git push origin dev
+Envia os dados commitados no repositório local de nome “dev” para o repositório remoto de mesmo nome.
+
+Obtendo dados do repositório remoto para o local
+
+Utilizar o comando “git pull” do inglês puxar.
+Este comando obtém os arquivos no branch remoto de mesmo nome que o local e já faz um merge automaticamente no branch local, informando o resultado da operação de MERGE.
+
+Basicamente 2 formas:
+	Git pull
+Obtém todas alterações do repositório remoto e atualiza os branchs locais correspondentes
+
+Git pull origin dev
+Obtém os dados commitados no repositório remoto de nome “dev” e atualiza no repositório local de mesmo nome.
+
+Podemos ainda obter dados mas não realizar o MERGE automaticamente no nosso branch local, para isto usa-se o comando “git fetch”.
+
+O comando “git fetch” traz para o branch local todas alterações do repositório remoto porém não realiza o MERGE. É muito útil quando queremos trazer os dados para comparar com “git log” ou “git diff” antes de fazer o MERGE. Como o os comandos do GIT são locais, após usar o fetch aí sim é possível usar o log e o diff.
+Exemplos de uso:
+	Git diff master origin/master
