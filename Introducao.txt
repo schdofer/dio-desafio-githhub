@@ -1,0 +1,45 @@
+O que é GIT?
+GIT é um VCS (Version Control System), ou seja um sistema utilizado para controle do versionamento de arquivos.
+O GIT trabalha de forma descentralizada, ou seja, possui diversos repositórios locais e remotos que podem ser interligados para trabalho colaborativo.
+
+Porque utilizar GIT?
+	Com uso do GIT temos as seguintes vantagens:
+
+Backup de nosso projeto
+Trabalhar colaborativamente e simultâneamente
+Versionamento
+Guarda a história do projeto
+Integrações
+Ocupa muito pouco espaço quando comparado aos concorrentes
+Líder de mercado
+Facíl de aprender e usar
+
+Instalando GIT
+Para instalar o GIT no Windows, simplesmente baixe o arquivo “Git for Windows”, no link abaixo:
+https://github.com/git-for-windows/git/releases/download/v2.19.1.windows.1/Git-2.19.1-64-bit.exe
+
+Após download, basta iniciar a instalação e avançar até o final.
+Para testar se a instalação ocorreu bem, abra um prompt e digite o comando abaixo:
+	git version ou git --version
+
+É possível ainda baixar outro executável chamado “tree.git”. Ele facilita a visualização dos diretórios do GIT (apenas para entender a fundo seu funcionamento).
+
+Após instalado, basta digitar tree.git no prompt de comando que ele exibirá a lista de diretórios utilizados pelo sistema GIT na sua solução.
+
+Arquitetura
+
+Working Directory
+Representa o diretório de trabalho no sistema de arquivos.
+Quando o arquivo está apenas nesta área, ele ainda não é controlado pelo GIT.
+Staging Area
+	É uma área de transferência utilizada pelo GIT.
+Os arquivos precisam ser adicionados nesta área para posteriormente serem persistidos ou salvos no repositório GIT.
+
+GIT Local Repository
+O repositório local do GIT é onde ficam os arquivos que já estão salvos e controlados pelo GIT.
+
+GIT Remote Repository
+O repositório remoto do GIT é exatamente como o repositório local, porém fica em outro computador ou servidor.
+
+
+
